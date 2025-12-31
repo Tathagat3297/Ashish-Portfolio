@@ -1,34 +1,18 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #f8fbff;
   color: #1f2933;
   line-height: 1.6;
 }
 
-/* DARK MODE */
 body.dark {
   background: #0f172a;
-  color: #e5e7eb;
-}
-
-body.dark .section.light {
-  background: #020617;
-}
-
-body.dark .project-card,
-body.dark .contact-card {
-  background: #020617;
   color: #e5e7eb;
 }
 
@@ -46,46 +30,42 @@ body.dark .contact-card {
   align-items: center;
 }
 
-.nav-links a,
-.nav-links button {
-  margin-left: 15px;
+.nav a, .nav button {
   color: white;
+  margin-left: 15px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
-  text-decoration: none;
 }
 
 /* HERO */
 .hero {
   background: linear-gradient(135deg, #1e4b7a, #3fa9f5);
   color: white;
-  padding: 100px 20px;
   text-align: center;
+  padding: 100px 20px;
 }
 
-.hero-buttons {
-  margin-top: 30px;
+.hero-deck {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 26px;
-  border-radius: 30px;
-  text-decoration: none;
-  margin: 6px;
-}
-
-.primary {
+.deck-card {
   background: white;
   color: #1e4b7a;
-  font-weight: bold;
+  padding: 25px;
+  border-radius: 16px;
+  text-decoration: none;
+  width: 160px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
 }
 
-.secondary {
-  border: 2px solid white;
-  color: white;
+.deck-card:hover {
+  transform: translateY(-8px);
 }
 
 /* SECTIONS */
@@ -93,7 +73,7 @@ body.dark .contact-card {
   padding: 80px 20px;
 }
 
-.section.light {
+.light {
   background: #eef5ff;
 }
 
@@ -103,37 +83,32 @@ body.dark .contact-card {
 }
 
 /* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+.skills-list {
+  margin-left: 20px;
 }
 
-/* TOOLS */
-.tools span {
-  background: #dbeafe;
-  padding: 10px 16px;
-  border-radius: 25px;
-  margin: 6px;
-  display: inline-block;
-}
-
-/* CARDS */
-.project-card,
-.contact-card {
+/* PROJECTS */
+.project-card {
   background: white;
   padding: 30px;
-  border-radius: 16px;
   margin-bottom: 25px;
+  border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* CONTACT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 25px;
-  text-align: center;
+.contact-deck {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #1f2933;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -141,14 +116,14 @@ body.dark .contact-card {
   background: #0f2a44;
   color: white;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
 }
 
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   background: #25d366;
   color: white;
   font-size: 2rem;
@@ -157,7 +132,7 @@ body.dark .contact-card {
   text-decoration: none;
 }
 
-/* ACCESSIBILITY: REDUCED MOTION */
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
